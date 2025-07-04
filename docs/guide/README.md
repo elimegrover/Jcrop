@@ -10,10 +10,11 @@ lang: en-US
 > Links are provided to more detailed documentation where relevant.
 
 ::: tip Pick your version
-This documentation covers the vanilla Javascript version of Jcrop.
-While it is very worthwhile to read and understand how Jcrop works,
-you may be more interested in using Jcrop wrappers for [Vue](/vue/)
-or [jQuery](/jquery/) which have their own quickstart docs.
+This documentation covers the core, dependency‑free JavaScript version
+of Jcrop. While it is very worthwhile to read and understand how Jcrop
+works, you may also wish to explore wrappers for frameworks such as
+[Vue](/vue/) or the optional [jQuery wrapper](/jquery/), each of which
+has its own quickstart docs.
 :::
 
 ## Including files

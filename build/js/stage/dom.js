@@ -66,7 +66,7 @@ class Stage extends ConfObj {
   }
 
   initStageDrag () {
-    var crop, pos, w, h, stick;
+    let crop, pos, w, h, stick;
     Dragger(this.el,
       (x,y,e) => {
         if (!this.canCreate()) return false;
@@ -93,7 +93,7 @@ class Stage extends ConfObj {
   }
 
   reorderWidgets () {
-    var z = 10;
+    let z = 10;
     this.crops.forEach(crop => {
       crop.el.style.zIndex = z++;
       if (this.active === crop) crop.addClass('active');

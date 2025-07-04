@@ -42,8 +42,8 @@ class Sticker {
   translateStuckPoint (ox,oy) {
     const [xx,yy,sp] = this.stuck;
 
-    var x = (xx === null)? sp: xx + ox;
-    var y = (yy === null)? sp: yy + oy;
+    let x = (xx === null) ? sp : xx + ox;
+    let y = (yy === null) ? sp : yy + oy;
 
     if (x > this.sw) x = this.sw;
     if (y > this.sh) y = this.sh;
@@ -51,9 +51,9 @@ class Sticker {
     if (y < 0) y = 0;
 
     if (this.aspect) {
-      var [w,h] = this.getMaxRect(x,y,this.aspect);
-      var quad = this.getDragQuadrant(x,y);
-      var res = Rect.fromPoint(this.locked,w,h,quad);
+      const [w,h] = this.getMaxRect(x,y,this.aspect);
+      const quad = this.getDragQuadrant(x,y);
+      const res = Rect.fromPoint(this.locked,w,h,quad);
       return [ res.x2, res.y2 ];
     }
 

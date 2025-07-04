@@ -3,7 +3,7 @@
 */
 
 const Dragger = function (el,startcb,movecb,donecb) {
-  var ox, oy;
+  let ox, oy;
   if (typeof el === 'string') el = document.getElementById(el);
 
   el.addEventListener('mousedown',start);

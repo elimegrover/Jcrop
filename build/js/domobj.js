@@ -11,25 +11,27 @@ class DomObj {
     return this;
   }
 
-  emit (evname) {
-    const ev = document.createEvent('Event');
-    ev.initEvent(evname, true, true);
+  emit (evname, detail = null) {
+    const ev = new CustomEvent(evname, {
+      bubbles: true,
+      cancelable: true,
+      detail
+    });
     ev.cropTarget = this;
     this.el.dispatchEvent(ev);
   }
 
   removeClass (cl) {
-    this.el.className = this.el.className
-      .split(' ').filter(i => cl !== i).join(' ');
+    this.el.classList.remove(cl);
     return this;
   }
 
   hasClass (cl) {
-    return this.el.className.split(' ').filter(i => cl === i).length;
+    return this.el.classList.contains(cl);
   }
 
   addClass (cl) {
-    if (!this.hasClass(cl)) this.el.className += ' ' + cl;
+    this.el.classList.add(cl);
     return this;
   }
 
