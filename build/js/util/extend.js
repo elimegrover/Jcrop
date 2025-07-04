@@ -1,15 +1,12 @@
-export default function extend () {
-  var extended = {};
-
-  for (let key in arguments) {
-    var argument = arguments[key];
-    for (let prop in argument) {
-      if (Object.prototype.hasOwnProperty.call(argument, prop)) {
-        extended[prop] = argument[prop];
-      }
+export default function extend (...sources) {
+  return sources.reduce((extended, obj) => {
+    if (obj && typeof obj === 'object') {
+      Object.keys(obj).forEach(prop => {
+        extended[prop] = obj[prop];
+      });
     }
-  }
+    return extended;
+  }, {});
+}
 
-  return extended;
-};
 

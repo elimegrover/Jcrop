@@ -29,7 +29,7 @@ class Widget extends ConfObj {
       const p = this.pos;
       this.aspect = ar || null;
       if (this.aspect && p) {
-        var [w,h] = Rect.getMax(p.w,p.h,ar);
+        const [w,h] = Rect.getMax(p.w,p.h,ar);
         this.render(Rect.fromPoint([p.x,p.y],w,h));
       }
     };
@@ -56,9 +56,9 @@ class Widget extends ConfObj {
   }
 
   createMover () {
-    var w,h;
+    let w,h;
     this.pos = Rect.from(this.el);
-    var stick;
+    let stick;
     Dragger(
       this.el,
       () => {
@@ -95,7 +95,7 @@ class Widget extends ConfObj {
       const handle = Handle.create('jcrop-handle '+c);
       handle.appendTo(this.el);
 
-      var stick;
+      let stick;
       Dragger(handle.el,
         () => {
           if (!this.stage.enabled) return false;
